@@ -11,19 +11,19 @@
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
         
-        /* FIXED BACKGROUND: 
-           1. Added a fallback color (#064e3b) so it's never gray.
-           2. Used a reliable landscape image URL.
+        /* FINAL HEADER FIX: 
+           Using a permanent, high-reliability public URL that matches 
+           the original site's look (Desert Mountains & Golf Course).
+           No local files required for this background.
         */
         .hero-bg {
-            background-color: #064e3b; /* Dark Emerald Fallback */
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1622396481328-3c35581e2897?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-color: #064e3b; /* Deep Green Fallback */
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
     </style>
-</head>
 <body class="bg-gray-50 text-gray-800" x-data="{ mobileMenuOpen: false }">
 
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur shadow-md transition-all duration-300">
