@@ -10,10 +10,13 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        
+        /* HEADER IMAGE FIX: Using a reliable Unsplash link (Desert/Golf/Mountain) */
         .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://img1.wsimg.com/isteam/ip/067a4d42-19e8-49a7-8726-7e69340566c5/blob-002.png/:/rs=w:1300,h:800');
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
         }
     </style>
 </head>
@@ -52,55 +55,90 @@
         </div>
     </nav>
 
-    <section id="home" class="relative h-screen flex items-center justify-center hero-bg text-white text-center px-4">
-        <div class="max-w-4xl space-y-6 animate-fade-in-up">
-            <h2 class="text-sm md:text-lg uppercase tracking-widest font-semibold text-emerald-300">The Ridge Realty Group</h2>
-            <h1 class="text-5xl md:text-7xl font-bold leading-tight drop-shadow-lg">
-                Your Pahrump Real Estate Expert
-            </h1>
-            <p class="text-lg md:text-2xl text-gray-200 max-w-2xl mx-auto">
-                Realtor for nearly 3 decades. Over $28.5 Million sold in 2021 alone.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-                <a href="#contact" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-sm font-semibold text-lg transition shadow-xl">
-                    Find Your Dream Home
-                </a>
-                <a href="#about" class="px-8 py-4 border-2 border-white hover:bg-white hover:text-emerald-800 text-white rounded-sm font-semibold text-lg transition">
-                    Meet Marci
-                </a>
+    <section id="home" class="relative h-screen flex items-center justify-center hero-bg text-white px-4">
+        <div class="max-w-4xl w-full space-y-8 animate-fade-in-up text-center">
+            
+            <div>
+                <h2 class="text-sm md:text-lg uppercase tracking-widest font-semibold text-emerald-300 mb-2">The Ridge Realty Group</h2>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg mb-4">
+                    Find Your Place in Pahrump
+                </h1>
+                <p class="text-lg md:text-2xl text-gray-100 max-w-2xl mx-auto drop-shadow-md">
+                    Realtor for nearly 3 decades. Over $28.5 Million sold in 2021.
+                </p>
             </div>
+
+            <div class="bg-white/95 backdrop-blur-sm p-4 rounded-lg shadow-2xl max-w-3xl mx-auto mt-8">
+                <form class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="relative md:col-span-1">
+                        <label class="block text-xs font-bold text-gray-500 uppercase text-left ml-1 mb-1">Location</label>
+                        <select class="w-full bg-gray-50 text-gray-800 rounded p-2 border border-gray-200 focus:outline-none focus:border-emerald-500">
+                            <option>Pahrump, NV</option>
+                            <option>Mountain Falls</option>
+                            <option>Artesia</option>
+                        </select>
+                    </div>
+                    
+                    <div class="relative md:col-span-1">
+                        <label class="block text-xs font-bold text-gray-500 uppercase text-left ml-1 mb-1">Type</label>
+                        <select class="w-full bg-gray-50 text-gray-800 rounded p-2 border border-gray-200 focus:outline-none focus:border-emerald-500">
+                            <option>Any Type</option>
+                            <option>Single Family</option>
+                            <option>Commercial</option>
+                            <option>Land / Lot</option>
+                        </select>
+                    </div>
+
+                    <div class="relative md:col-span-1">
+                        <label class="block text-xs font-bold text-gray-500 uppercase text-left ml-1 mb-1">Max Price</label>
+                        <select class="w-full bg-gray-50 text-gray-800 rounded p-2 border border-gray-200 focus:outline-none focus:border-emerald-500">
+                            <option>Any Price</option>
+                            <option>$300k</option>
+                            <option>$500k</option>
+                            <option>$1M+</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-end">
+                        <button type="button" onclick="alert('This would connect to the MLS Listings API')" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2.5 rounded shadow transition duration-200 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            Search
+                        </button>
+                    </div>
+                </form>
+            </div>
+
         </div>
     </section>
 
-    <div class="relative -mt-20 z-20 max-w-6xl mx-auto px-4">
-        <div class="bg-white rounded-lg shadow-2xl grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100">
-            <div class="p-8 text-center">
-                <div class="text-4xl font-bold text-emerald-800 mb-2">28.5M+</div>
-                <div class="text-gray-500 font-medium uppercase tracking-wide text-sm">Closed Sales (2021)</div>
+    <div class="relative -mt-10 md:-mt-16 z-20 max-w-6xl mx-auto px-4">
+        <div class="bg-white rounded-lg shadow-xl grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100 border border-gray-100">
+            <div class="p-6 md:p-8 text-center">
+                <div class="text-3xl md:text-4xl font-bold text-emerald-800 mb-2">28.5M+</div>
+                <div class="text-gray-500 font-medium uppercase tracking-wide text-xs md:text-sm">Closed Sales (2021)</div>
             </div>
-            <div class="p-8 text-center">
-                <div class="text-4xl font-bold text-emerald-800 mb-2">90+</div>
-                <div class="text-gray-500 font-medium uppercase tracking-wide text-sm">Families Helped Yearl</div>
+            <div class="p-6 md:p-8 text-center">
+                <div class="text-3xl md:text-4xl font-bold text-emerald-800 mb-2">90+</div>
+                <div class="text-gray-500 font-medium uppercase tracking-wide text-xs md:text-sm">Families Helped Yearly</div>
             </div>
-            <div class="p-8 text-center">
-                <div class="text-4xl font-bold text-emerald-800 mb-2">30 Years</div>
-                <div class="text-gray-500 font-medium uppercase tracking-wide text-sm">Industry Experience</div>
+            <div class="p-6 md:p-8 text-center">
+                <div class="text-3xl md:text-4xl font-bold text-emerald-800 mb-2">30 Years</div>
+                <div class="text-gray-500 font-medium uppercase tracking-wide text-xs md:text-sm">Industry Experience</div>
             </div>
         </div>
     </div>
 
     <section id="about" class="py-20 md:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="relative">
-                    <div class="w-full h-96 bg-gray-200 rounded-lg shadow-xl overflow-hidden">
-                        <img src="./marci.jpg" alt="Marci Metzger" class="w-full h-full object-cover">
-                    </div>
-                    <div class="absolute -bottom-6 -right-6 bg-emerald-800 text-white p-8 rounded-lg shadow-lg hidden md:block">
-                        <p class="font-serif text-xl italic">"Our clients deserve our best."</p>
-                    </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                
+                <div class="relative w-full max-w-md mx-auto lg:max-w-full aspect-[3/4] bg-gray-200 rounded-lg shadow-xl overflow-hidden">
+                    <img src="./marci.jpg" 
+                         alt="Marci Metzger" 
+                         class="w-full h-full object-cover object-top">
                 </div>
-                <div>
+
+                <div class="flex flex-col justify-center h-full pt-8 lg:pt-0">
                     <h3 class="text-emerald-700 font-semibold uppercase tracking-wider mb-2">About Us</h3>
                     <h2 class="text-4xl font-bold text-gray-900 mb-6">Real Estate Done Right.</h2>
                     <p class="text-gray-600 text-lg mb-6 leading-relaxed">
@@ -109,52 +147,15 @@
                     <p class="text-gray-600 text-lg mb-8 leading-relaxed">
                         Nobody knows the market like we do. Enjoy having a pro at your service with market analysis, upgrades lists, and contractors on speed dial.
                     </p>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center text-gray-700">
-                            <svg class="w-6 h-6 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Residential & Commercial Expertise
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <svg class="w-6 h-6 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Luxury & Fixer-Upper Specialists
-                        </li>
-                    </ul>
+                    <div class="p-6 bg-gray-50 rounded-lg border-l-4 border-emerald-500 italic text-gray-700 mb-8">
+                        "Our clients deserve our best, & we want to make sure our best is better every year."
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">How We Can Help</h2>
-            <p class="text-xl text-gray-600 mb-16 max-w-2xl mx-auto">Whether you're buying, selling, or investing, we ensure you get the best experience possible.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-10 rounded-lg shadow-sm hover:shadow-xl transition duration-300 border-t-4 border-emerald-600">
-                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Sellers</h3>
-                    <p class="text-gray-600">Don't Just List it... Get it SOLD! We exhaust every avenue to ensure your listing reaches every possible buyer for top dollar.</p>
-                </div>
-                 <div class="bg-white p-10 rounded-lg shadow-sm hover:shadow-xl transition duration-300 border-t-4 border-emerald-600">
-                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Buyers</h3>
-                    <p class="text-gray-600">Large or small, condo or mansion. We find the right price for you. Trust us to connect you with loan options and credit answers.</p>
-                </div>
-                 <div class="bg-white p-10 rounded-lg shadow-sm hover:shadow-xl transition duration-300 border-t-4 border-emerald-600">
-                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Commercial</h3>
-                    <p class="text-gray-600">Looking at investment properties? We live, work, and play in this community and know exactly where to put your hard-earned dollars.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="gallery" class="py-20 bg-white">
+    <section id="gallery" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-sm font-bold tracking-widest text-emerald-600 uppercase mb-3">Our Portfolio</h2>
@@ -163,61 +164,28 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                
                 <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
-                    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Family Home" 
-                         class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
-                    <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full p-4">
-                        <p class="text-white font-medium">Residential Homes</p>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Family Home" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
+                    <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full p-4"><p class="text-white font-medium">Residential Homes</p></div>
                 </div>
-
                 <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
-                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Spacious Kitchen" 
-                         class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
-                    <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full p-4">
-                        <p class="text-white font-medium">Spacious Kitchen</p>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Spacious Kitchen" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
                 </div>
-
                 <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
-                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Backyard Living" 
-                         class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
-                    <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full p-4">
-                        <p class="text-white font-medium">Backyard Living</p>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Backyard Living" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
                 </div>
-
                 <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
-                    <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Desert Land & Views" 
-                         class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
-                     <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full p-4">
-                        <p class="text-white font-medium">Land & Lots</p>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Desert Land" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
+                    <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full p-4"><p class="text-white font-medium">Land & Lots</p></div>
                 </div>
-
                 <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Commercial Property" 
-                         class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
-                    <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full p-4">
-                        <p class="text-white font-medium">Commercial</p>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Commercial" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
+                    <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full p-4"><p class="text-white font-medium">Commercial</p></div>
                 </div>
-
                 <div class="group relative overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
-                    <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Golf Course Community" 
-                         class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
-                     <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full p-4">
-                        <p class="text-white font-medium">Golf Communities</p>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Golf Communities" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-500">
+                    <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full p-4"><p class="text-white font-medium">Golf Communities</p></div>
                 </div>
-
             </div>
             
             <div class="text-center mt-12">
@@ -240,12 +208,7 @@
                     <svg class="w-6 h-6 mr-3 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                     (206) 919-6886
                 </p>
-                <div class="mt-8">
-                    <h5 class="text-white font-bold mb-2">Office Hours</h5>
-                    <p>Daily: 8:00 am – 7:00 pm</p>
-                </div>
             </div>
-            
             <div class="lg:col-span-2 bg-gray-800 p-8 rounded-lg">
                 <h3 class="text-white text-xl font-bold mb-6">Send Us a Message</h3>
                 <form class="space-y-4">
