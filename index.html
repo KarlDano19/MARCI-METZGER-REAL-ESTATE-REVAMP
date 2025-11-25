@@ -11,9 +11,9 @@
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
         
-        /* HEADER IMAGE FIX: Using a reliable Unsplash link (Desert/Golf/Mountain) */
+        /* HEADER FIX: Wide Angle Desert Golf Course (No close-ups) */
         .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1622396481328-3c35581e2897?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -55,10 +55,10 @@
         </div>
     </nav>
 
-    <section id="home" class="relative h-screen flex items-center justify-center hero-bg text-white px-4">
-        <div class="max-w-4xl w-full space-y-8 animate-fade-in-up text-center">
+    <section id="home" class="relative min-h-screen flex items-center justify-center hero-bg text-white px-4 pt-20">
+        <div class="max-w-5xl w-full space-y-10 animate-fade-in-up text-center">
             
-            <div>
+            <div class="mt-8">
                 <h2 class="text-sm md:text-lg uppercase tracking-widest font-semibold text-emerald-300 mb-2">The Ridge Realty Group</h2>
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg mb-4">
                     Find Your Place in Pahrump
@@ -68,41 +68,72 @@
                 </p>
             </div>
 
-            <div class="bg-white/95 backdrop-blur-sm p-4 rounded-lg shadow-2xl max-w-3xl mx-auto mt-8">
-                <form class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <div class="relative md:col-span-1">
-                        <label class="block text-xs font-bold text-gray-500 uppercase text-left ml-1 mb-1">Location</label>
-                        <select class="w-full bg-gray-50 text-gray-800 rounded p-2 border border-gray-200 focus:outline-none focus:border-emerald-500">
+            <div class="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-2xl max-w-4xl mx-auto text-left">
+                <h3 class="text-emerald-800 text-xl font-bold mb-4 border-b border-gray-200 pb-2">Search Listings</h3>
+                
+                <form class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="col-span-2 md:col-span-1">
+                        <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Location</label>
+                        <select class="w-full bg-gray-50 text-gray-800 rounded p-2.5 border border-gray-200 focus:outline-none focus:border-emerald-500">
                             <option>Pahrump, NV</option>
                             <option>Mountain Falls</option>
                             <option>Artesia</option>
                         </select>
                     </div>
                     
-                    <div class="relative md:col-span-1">
-                        <label class="block text-xs font-bold text-gray-500 uppercase text-left ml-1 mb-1">Type</label>
-                        <select class="w-full bg-gray-50 text-gray-800 rounded p-2 border border-gray-200 focus:outline-none focus:border-emerald-500">
-                            <option>Any Type</option>
-                            <option>Single Family</option>
+                    <div class="col-span-1 md:col-span-1">
+                        <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Type</label>
+                        <select class="w-full bg-gray-50 text-gray-800 rounded p-2.5 border border-gray-200 focus:outline-none focus:border-emerald-500">
+                            <option>Any</option>
+                            <option>House</option>
+                            <option>Land</option>
                             <option>Commercial</option>
-                            <option>Land / Lot</option>
                         </select>
                     </div>
 
-                    <div class="relative md:col-span-1">
-                        <label class="block text-xs font-bold text-gray-500 uppercase text-left ml-1 mb-1">Max Price</label>
-                        <select class="w-full bg-gray-50 text-gray-800 rounded p-2 border border-gray-200 focus:outline-none focus:border-emerald-500">
-                            <option>Any Price</option>
+                    <div class="col-span-1 md:col-span-1">
+                        <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Max Price</label>
+                        <select class="w-full bg-gray-50 text-gray-800 rounded p-2.5 border border-gray-200 focus:outline-none focus:border-emerald-500">
+                            <option>Any</option>
                             <option>$300k</option>
                             <option>$500k</option>
                             <option>$1M+</option>
                         </select>
                     </div>
 
-                    <div class="flex items-end">
-                        <button type="button" onclick="alert('This would connect to the MLS Listings API')" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2.5 rounded shadow transition duration-200 flex items-center justify-center gap-2">
+                    <div class="col-span-2 md:col-span-1">
+                        <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Sort By</label>
+                        <select class="w-full bg-gray-50 text-gray-800 rounded p-2.5 border border-gray-200 focus:outline-none focus:border-emerald-500">
+                            <option>Newest Listed</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                        </select>
+                    </div>
+
+                    <div class="col-span-1 md:col-span-1">
+                        <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Beds</label>
+                        <select class="w-full bg-gray-50 text-gray-800 rounded p-2.5 border border-gray-200 focus:outline-none focus:border-emerald-500">
+                            <option>Any</option>
+                            <option>2+</option>
+                            <option>3+</option>
+                            <option>4+</option>
+                        </select>
+                    </div>
+
+                    <div class="col-span-1 md:col-span-1">
+                        <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Baths</label>
+                        <select class="w-full bg-gray-50 text-gray-800 rounded p-2.5 border border-gray-200 focus:outline-none focus:border-emerald-500">
+                            <option>Any</option>
+                            <option>1+</option>
+                            <option>2+</option>
+                            <option>3+</option>
+                        </select>
+                    </div>
+
+                    <div class="col-span-2 md:col-span-2 flex items-end">
+                        <button type="button" onclick="alert('Searching Listings...')" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2.5 rounded shadow transition duration-200 flex items-center justify-center gap-2">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                            Search
+                            Search Listings
                         </button>
                     </div>
                 </form>
